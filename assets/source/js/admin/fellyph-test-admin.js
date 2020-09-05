@@ -1,1 +1,1 @@
-import 'bootstrap.min';
+console.log('script');

@@ -44,7 +44,7 @@ class FellyphTest_Admin_Assets extends FellyphTest_Assets {
 					'src' => $this->localize_asset( 'css/admin/fellyph-test-admin.css' ),
 				),
 				'bootstrap-admin'    => array(
-					'src' => $this->localize_asset( 'css/admin/bootstrap.min.css' ),
+					'src' => $this->localize_asset( 'libs/css/bootstrap.min.css' ),
 				),
 			)
 		);
@@ -66,7 +66,7 @@ class FellyphTest_Admin_Assets extends FellyphTest_Assets {
 					),
 				),
 				'bootstrap-admin' => array(
-					'src' => $this->localize_asset( 'js/admin/bootstrap.min.js' ),
+					'src' => $this->localize_asset( 'libs/js/bootstrap.min.js' ),
 				),
 			)
 		);
