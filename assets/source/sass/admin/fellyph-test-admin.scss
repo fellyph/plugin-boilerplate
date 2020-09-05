@@ -1,10 +1,5 @@
-/**
- * All of the CSS for your admin-specific functionality should be
- * included in this file.
- */
+$global-spacing: 4px;
 
- $global-spacing: 4px;
-
- .spacing {
-	 padding: $global-spacing;
- }
+.spacing {
+	padding: $global-spacing;
+}
