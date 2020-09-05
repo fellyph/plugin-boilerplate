@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Provide a admin area view for the plugin
  *
@@ -11,7 +10,14 @@
  * @package    Fellyph_Test
  * @subpackage Fellyph_Test/Admin/views
  */
+
 ?>
 
-<!-- This file should primarily consist of HTML with a little bit of PHP. -->
-<p>First view</p>
+<!-- Adding bootstrap to speed up the UI development. -->
+
+<div class="row">
+	<div class="col-s-6">
+		<h2>First View with bootstrap</h2>
+		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione nisi repudiandae quibusdam dolorem asperiores aspernatur praesentium modi delectus vero cupiditate fugiat atque dolor unde vitae quam fugit, nam facilis enim!</p>
+	</div>
+</div>
