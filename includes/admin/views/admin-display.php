@@ -15,9 +15,19 @@
 
 <!-- Adding bootstrap to speed up the UI development. -->
 
-<div class="row">
-	<div class="col-s-6">
-		<h2>First View with bootstrap</h2>
-		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione nisi repudiandae quibusdam dolorem asperiores aspernatur praesentium modi delectus vero cupiditate fugiat atque dolor unde vitae quam fugit, nam facilis enim!</p>
-	</div>
-</div>
+<section class="container">
+		<div class="row">
+			<div class="col-sm-12 jumbotron">
+				<h1><?php esc_html_e( 'First view', 'fellyph-test' ); ?></h1>
+				<p><?php esc_html_e( 'Adding the information to be listed at the users profile page', 'fellyph-test' ); ?></p>
+				<form method="POST" action="options.php">
+					<div class="form-group">
+						<label for="keywordInput"><?php esc_html_e( 'Keyword', 'fellyph-test' ); ?></label>
+						<input type="text" class="form-control" id="keywordInput" name="userKeyword" aria-describedby="keywordHelp" placeholder="<?php esc_html_e( 'Enter the keyword', 'fellyph-test' ); ?>">
+						<small id="keywordHelp" class="form-text text-muted"><?php esc_html_e( 'Add a keyword to the users', 'fellyph-test' ); ?></small>
+					</div>
+					<button type="submit" class="btn btn-primary"><?php esc_html_e( 'Submit', 'fellyph-test' ); ?></button>
+				</form>
+			</div>
+		</div>
+</section>

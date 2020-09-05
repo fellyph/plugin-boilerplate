@@ -24,6 +24,9 @@ class FellyphTest_Admin {
 	public function __construct() {
 		$this->includes();
 		add_action( 'current_screen', array( $this, 'conditional_includes' ) );
+
+		// adding menu.
+		add_action( 'admin_menu', array( $this, 'my_admin_menu' ) );
 	}
 
 	/**
@@ -51,6 +54,28 @@ class FellyphTest_Admin {
 			case 'profile':
 			case 'user-edit':
 		}
+	}
+
+	/**
+	 * Adding admin menu
+	 */
+	public function my_admin_menu() {
+		add_menu_page(
+			__( 'Buyer keywords settings', 'fellyph-test' ),
+			__( 'Buyer keywords', 'fellyph-test' ),
+			'manage_options',
+			'fellyph-test/settings.php',
+			array( $this, 'fellyphtest_admin_page' ),
+			'dashicons-palmtree',
+			250
+		);
+	}
+
+	/**
+	 * Calling admin view
+	 */
+	public function fellyphtest_admin_page() {
+		require_once 'views/admin-display.php';
 	}
 }
 

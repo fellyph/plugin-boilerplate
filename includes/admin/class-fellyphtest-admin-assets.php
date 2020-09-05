@@ -26,9 +26,6 @@ class FellyphTest_Admin_Assets extends FellyphTest_Assets {
 		add_action( 'admin_enqueue_scripts', array( $this, 'load_scripts' ) );
 		add_action( 'admin_print_scripts', array( $this, 'localize_printed_scripts' ), 5 );
 		add_action( 'admin_print_footer_scripts', array( $this, 'localize_printed_scripts' ), 5 );
-
-		// adding menu.
-		add_action( 'admin_menu', array( $this, 'my_admin_menu' ) );
 	}
 
 	/**
@@ -41,7 +38,7 @@ class FellyphTest_Admin_Assets extends FellyphTest_Assets {
 			'fellyph_test_enqueue_admin_styles',
 			array(
 				'fellyph-test-admin' => array(
-					'src' => $this->localize_asset( 'css/admin/fellyph-test-admin.css' ),
+					'src' => $this->localize_asset( 'css/admin/admin.css' ),
 				),
 				'bootstrap-admin'    => array(
 					'src' => $this->localize_asset( 'libs/css/bootstrap.min.css' ),
@@ -60,7 +57,7 @@ class FellyphTest_Admin_Assets extends FellyphTest_Assets {
 			'fellyph_test_enqueue_admin_scripts',
 			array(
 				'fellyph-test-admin' => array(
-					'src'  => $this->localize_asset( 'js/admin/fellyph-test-admin.js' ),
+					'src'  => $this->localize_asset( 'js/admin/admin.js' ),
 					'data' => array(
 						'ajax_url' => FellyphTestFn()->ajax_url(),
 					),
