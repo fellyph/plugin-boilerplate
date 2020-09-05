@@ -239,4 +239,26 @@ abstract class FellyphTest_Assets {
 			$this->localize_script( $handle );
 		}
 	}
+
+	/**
+	 * Adding admin menu
+	 */
+	public function my_admin_menu() {
+		add_menu_page(
+			__( 'Buyer keywords settings', 'fellyph-test' ),
+			__( 'Buyer keywords', 'fellyph-test' ),
+			'manage_options',
+			'fellyph-test/settings.php',
+			array( $this, 'fellyphtest_admin_page' ),
+			'dashicons-palmtree',
+			250
+		);
+	}
+
+	/**
+	 * Calling admin view
+	 */
+	public function fellyphtest_admin_page() {
+		require_once 'admin/views/admin-display.php';
+	}
 }

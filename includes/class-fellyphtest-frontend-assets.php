@@ -31,6 +31,7 @@ class FellyphTest_Frontend_Assets extends FellyphTest_Assets {
 
 	/**
 	 * Get styles for the frontend.
+   *
 	 * @access private
 	 * @return array
 	 */

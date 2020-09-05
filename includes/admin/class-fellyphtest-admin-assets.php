@@ -26,6 +26,9 @@ class FellyphTest_Admin_Assets extends FellyphTest_Assets {
 		add_action( 'admin_enqueue_scripts', array( $this, 'load_scripts' ) );
 		add_action( 'admin_print_scripts', array( $this, 'localize_printed_scripts' ), 5 );
 		add_action( 'admin_print_footer_scripts', array( $this, 'localize_printed_scripts' ), 5 );
+
+		// adding menu.
+		add_action( 'admin_menu', array( $this, 'my_admin_menu' ) );
 	}
 
 	/**
