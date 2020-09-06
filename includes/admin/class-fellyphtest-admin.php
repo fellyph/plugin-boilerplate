@@ -82,9 +82,13 @@ class FellyphTest_Admin {
 	}
 
 	/**
-	 * Check value before save
+	 * Check value before save - I got stucked at that part some comments at the feedback md file
+	 *
+	 * @access private
+	 * @param  string $input
+	 * @return string
 	 */
-	public function save_keywords( $input ) {
+	private function save_keywords( $input ) {
 		$keys_list = ( is_array( get_option( 'user_keyword_list' ) ) ?
 			get_option( 'user_keyword_list' ) : array() );
 		array_push( $keys_list, esc_html( $input ) );
