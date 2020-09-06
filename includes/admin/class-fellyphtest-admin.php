@@ -27,6 +27,9 @@ class FellyphTest_Admin {
 
 		// adding menu.
 		add_action( 'admin_menu', array( $this, 'my_admin_menu' ) );
+
+		// register settings.
+		add_action( 'admin_init', array( $this, 'register_fellyph_test_settings' ) );
 	}
 
 	/**
@@ -76,6 +79,15 @@ class FellyphTest_Admin {
 	 */
 	public function fellyphtest_admin_page() {
 		require_once 'views/admin-display.php';
+	}
+
+
+	/**
+	 * Register all hooks to the admin page
+	 */
+	public function register_fellyph_test_settings() {
+		// register all general settings.
+		register_setting( 'fellyph-test-keywords', 'userKeyword' );
 	}
 }
 

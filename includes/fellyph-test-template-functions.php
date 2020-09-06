@@ -24,17 +24,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 function fellyph_test_get_template_part( $slug, $name = '' ) {
 	$template = '';
 
-	// Look in yourtheme/slug-name.php and yourtheme/fellyph-test/slug-name.php
+	// Look in yourtheme/slug-name.php and yourtheme/fellyph-test/slug-name.php.
 	if ( $name ) {
 		$template = locate_template( array( "{$slug}-{$name}.php", FellyphTestFn()->template_path() . "{$slug}-{$name}.php" ) );
 	}
 
-	// Get default slug-name.php
+	// Get default slug-name.php.
 	if ( ! $template && $name && file_exists( FellyphTestFn()->plugin_path() . "/templates/{$slug}-{$name}.php" ) ) {
 		$template = FellyphTestFn()->plugin_path() . "/templates/{$slug}-{$name}.php";
 	}
 
-	// If template file doesn't exist, look in yourtheme/slug.php and yourtheme/fellyph-test/slug.php
+	// If template file doesn't exist, look in yourtheme/slug.php and yourtheme/fellyph-test/slug.php.
 	if ( ! $template ) {
 		$template = locate_template( array( "{$slug}.php", FellyphTestFn()->template_path() . "{$slug}.php" ) );
 	}

@@ -20,24 +20,28 @@ abstract class FellyphTest_Assets {
 
 	/**
 	 * Contains an array of script handles registered by WC.
+	 *
 	 * @var array
 	 */
 	private $scripts = array();
 
 	/**
 	 * Contains an array of script handles registered by WC.
+	 *
 	 * @var array
 	 */
 	private $styles = array();
 
 	/**
 	 * Contains an array of script handles localized by WC.
+	 *
 	 * @var array
 	 */
 	private $wp_localize_scripts = array();
 
 	/**
 	 * Tryies to localize the minified version if required and exists, otherwise load the unminified version
+	 *
 	 * @access protected
 	 * @param  string   $path
 	 * @return string
@@ -61,6 +65,7 @@ abstract class FellyphTest_Assets {
 
 	/**
 	 * Get styles for the frontend.
+	 *
 	 * @access private
 	 * @return array
 	 */
@@ -70,6 +75,7 @@ abstract class FellyphTest_Assets {
 
 	/**
 	 * Get styles for the frontend.
+	 *
 	 * @access private
 	 * @return array
 	 */
@@ -159,7 +165,7 @@ abstract class FellyphTest_Assets {
 		$assets_path          = str_replace( array( 'http:', 'https:' ), '', FellyphTestFn()->plugin_url() ) . '/assets/';
 		$frontend_script_path = $assets_path . 'js/frontend/';
 
-		// JS Scripts
+		// JS Scripts.
 		$enqueue_scripts = $this->get_scripts();
 		if ( $enqueue_scripts ) {
 			foreach ( $enqueue_scripts as $handle => $args ) {
@@ -176,7 +182,7 @@ abstract class FellyphTest_Assets {
 			}
 		}
 
-		// CSS Styles
+		// CSS Styles.
 		$enqueue_styles = $this->get_styles();
 		if ( $enqueue_styles ) {
 			foreach ( $enqueue_styles as $handle => $args ) {
@@ -196,6 +202,7 @@ abstract class FellyphTest_Assets {
 
 	/**
 	 * Localize a WC script once.
+	 *
 	 * @access private
 	 * @since  1.0.0 this needs less wp_script_is() calls due to https://core.trac.wordpress.org/ticket/28404 being added in WP 4.0.
 	 * @param  string $handle
@@ -213,6 +220,7 @@ abstract class FellyphTest_Assets {
 
 	/**
 	 * Return data for script handles.
+	 *
 	 * @access private
 	 * @param  string $handle
 	 * @return array|bool

@@ -21,9 +21,19 @@
 				<h1><?php esc_html_e( 'First view', 'fellyph-test' ); ?></h1>
 				<p><?php esc_html_e( 'Adding the information to be listed at the users profile page', 'fellyph-test' ); ?></p>
 				<form method="POST" action="options.php">
+				<?php
+					settings_fields( 'fellyph-test-keywords' );
+					do_settings_sections( 'fellyph-test-keywords' );
+				?>
+
 					<div class="form-group">
 						<label for="keywordInput"><?php esc_html_e( 'Keyword', 'fellyph-test' ); ?></label>
-						<input type="text" class="form-control" id="keywordInput" name="userKeyword" aria-describedby="keywordHelp" placeholder="<?php esc_html_e( 'Enter the keyword', 'fellyph-test' ); ?>">
+						<input type="text" class="form-control"
+							id="keywordInput"
+							name="userKeyword"
+							value="<?php echo esc_attr( get_option( 'userKeyword' ) ); ?>"
+							aria-describedby="keywordHelp"
+							placeholder="<?php esc_html_e( 'Enter the keyword', 'fellyph-test' ); ?>">
 						<small id="keywordHelp" class="form-text text-muted"><?php esc_html_e( 'Add a keyword to the users', 'fellyph-test' ); ?></small>
 					</div>
 					<button type="submit" class="btn btn-primary"><?php esc_html_e( 'Submit', 'fellyph-test' ); ?></button>

@@ -31,7 +31,7 @@ class FellyphTest_Frontend_Assets extends FellyphTest_Assets {
 
 	/**
 	 * Get styles for the frontend.
-   *
+	 *
 	 * @access private
 	 * @return array
 	 */
@@ -40,7 +40,7 @@ class FellyphTest_Frontend_Assets extends FellyphTest_Assets {
 			'fellyph_test_enqueue_styles',
 			array(
 				'fellyph-test-general' => array(
-					'src' => $this->localize_asset( 'css/frontend/fellyph-test.css' ),
+					'src' => $this->localize_asset( 'css/frontend/frontend.css' ),
 				),
 			)
 		);
@@ -48,6 +48,7 @@ class FellyphTest_Frontend_Assets extends FellyphTest_Assets {
 
 	/**
 	 * Get styles for the frontend.
+	 *
 	 * @access private
 	 * @return array
 	 */
@@ -56,7 +57,7 @@ class FellyphTest_Frontend_Assets extends FellyphTest_Assets {
 			'fellyph_test_enqueue_scripts',
 			array(
 				'fellyph-test-general' => array(
-					'src'  => $this->localize_asset( 'js/frontend/fellyph-test.js' ),
+					'src'  => $this->localize_asset( 'js/frontend/frontend.js' ),
 					'data' => array(
 						'ajax_url' => FellyphTestFn()->ajax_url(),
 					),
