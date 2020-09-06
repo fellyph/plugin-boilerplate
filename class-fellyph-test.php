@@ -135,7 +135,8 @@ if ( ! class_exists( 'Fellyph_Test' ) ) :
 			}
 
 			if ( $this->is_request( 'frontend' ) ) {
-				include_once 'includes/class-fellyphtest-frontend-assets.php'; // Frontend Scripts
+				include_once 'includes/class-fellyphtest-frontend-assets.php'; // Frontend Scripts.
+				include_once 'includes/class-fellyphtest-frontend.php'; // Adding class only for front end.
 			}
 
 			$this->customizations_includes();

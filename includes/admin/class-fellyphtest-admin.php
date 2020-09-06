@@ -81,13 +81,28 @@ class FellyphTest_Admin {
 		require_once 'views/admin-display.php';
 	}
 
+	/**
+	 * Check value before save
+	 */
+	public function save_keywords( $input ) {
+		$keys_list = ( is_array( get_option( 'user_keyword_list' ) ) ?
+			get_option( 'user_keyword_list' ) : array() );
+		array_push( $keys_list, esc_html( $input ) );
+		update_option( 'user_keyword_list', $keys_list );
+		return $input;
+	}
 
 	/**
-	 * Register all hooks to the admin page
+	 * Register all settings value at admin page
 	 */
 	public function register_fellyph_test_settings() {
-		// register all general settings.
-		register_setting( 'fellyph-test-keywords', 'userKeyword' );
+		$args_list  = array( 'type' => 'array' );
+		$args_input = array(
+			'type'              => 'string',
+			'sanitize_callback' => array( $this, 'save_keywords' ),
+		);
+		register_setting( 'fellyph-test-keywords', 'user_keyword', $args_input );
+		register_setting( 'fellyph-test-keywords', 'user_keyword_list', $args_list );
 	}
 }
 

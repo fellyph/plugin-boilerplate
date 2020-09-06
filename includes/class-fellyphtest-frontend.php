@@ -10,15 +10,11 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 
 /**
- * FellyphTest_Admin class.
- */
-
-/**
- * FellyphTest_Admin class.
+ * FellyphTest_Frontend class.
  */
 class FellyphTest_Frontend {
 
@@ -26,15 +22,17 @@ class FellyphTest_Frontend {
 	 * Constructor.
 	 */
 	public function __construct() {
-		$this->init();
+		add_shortcode( 'users_keywords', $this->get_keywords );
 	}
-
 
 	/**
 	 * Adding initial function
 	 */
-	public function init() {
-
+	public function get_keywords() {
+		// get general settings options.
+		$admin_key_word = esc_html( get_option( 'users_keywords' ) );
+		echo ( esc_html( $admin_key_word ) );
 	}
 }
+
 return new FellyphTest_Frontend();
